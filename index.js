@@ -3,7 +3,6 @@ var des = require('des.js')
 var inherits = require('inherits')
 var Buffer = require('safe-buffer').Buffer
 
-
 var modes = {
   'des-ede3-cbc': des.CBC.instantiate(des.EDE),
   'des-ede3': des.EDE,
@@ -44,8 +43,8 @@ function DES (opts) {
   })
 }
 DES.prototype._update = function (data) {
-  return new Buffer(this._des.update(data))
+  return Buffer.from(this._des.update(data))
 }
 DES.prototype._final = function () {
-  return new Buffer(this._des.final())
+  return Buffer.from(this._des.final())
 }
