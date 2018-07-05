@@ -1,6 +1,8 @@
 var CipherBase = require('cipher-base')
 var des = require('des.js')
 var inherits = require('inherits')
+var Buffer = require('safe-buffer').Buffer
+
 
 var modes = {
   'des-ede3-cbc': des.CBC.instantiate(des.EDE),
