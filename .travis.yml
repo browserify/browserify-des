@@ -6,3 +6,9 @@ node_js:
   - "4"
   - "6"
   - "10"
+matrix:
+    include:
+         - node_js: "6"
+           arch: ppc64le
+         - node_js: "10"
+           arch: ppc64le
